@@ -122,6 +122,12 @@ index 145f671..900c050 100644
 +++ b/README.md
 @@ -7,16 +7,16 @@ PASOS PARA CREAR UN PROYECTO
 
+#09 mostramos el log de master
+git log
+
+#10 mostramos el log de master de github
+git log origin-github/master
+
 
 
 
