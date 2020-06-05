@@ -135,6 +135,69 @@ git diff origin-github/master master
 #ahora vamos a modificar directamente en github para luego hacer un pull al local y sincronizar.
 
 
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ git pull origin-github master
+From https://github.com/ronesprograms/cursos-platzi
+ * branch            master     -> FETCH_HEAD
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master|MERGING)
+$ git pull origin-github master
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master|MERGING)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master|MERGING)
+$ git commit -am " conflictos eliminados"
+[master 67fe391]  conflictos eliminados
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ git pull origin-github master
+From https://github.com/ronesprograms/cursos-platzi
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ git push origin-github master
+giEnumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 604 bytes | 604.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ronesprograms/cursos-platzi.git
+   b40718f..67fe391  master -> master
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ git push origin master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (7/7), 1.35 KiB | 462.00 KiB/s, done.
+Total 7 (delta 2), reused 0 (delta 0), pack-reused 0
+To C:\Users\ASUS\Google Drive (ronesprograms@gmail.com)\platzi-cursos\git-curso
+   3f81330..67fe391  master -> master
 
 
 
