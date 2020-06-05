@@ -132,6 +132,9 @@ git log origin-github/master
 #10 mostramos la differencias entre master de github y master local
 git diff origin-github/master master
 
+#ahora vamos a modificar directamente en github para luego hacer un pull al local y sincronizar.
+
+
 
 
 
