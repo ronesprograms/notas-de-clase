@@ -129,6 +129,10 @@ git log
 git log origin-github/master
 
 
+#10 mostramos la differencias entre master de github y master local
+git diff origin-github/master master
+
+
 
 
 
