@@ -108,4 +108,23 @@ git push origin-github master
 
 
 
+#08 mostramos los repositorios con git show
+$ git show
+commit 7a21481712d487a554238f238ab8f04ec27c2083 (HEAD -> master, origin/master, origin-github/master)
+Author: Ronald Espinoza <ronald.espinozaram@gmail.com>
+Date:   Fri Jun 5 16:03:45 2020 -0500
+
+    corregimos el proceso de creacion de repositorios
+
+diff --git a/README.md b/README.md
+index 145f671..900c050 100644
+--- a/README.md
++++ b/README.md
+@@ -7,16 +7,16 @@ PASOS PARA CREAR UN PROYECTO
+
+
+
+
+
+
 
