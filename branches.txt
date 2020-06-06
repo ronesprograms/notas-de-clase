@@ -1,0 +1,122 @@
+>>> para ver los branches
+$ git branch
+* master
+
+
+>> construir branches
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ git branch make-branches
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ git branch
+  make-branches
+* master
+
+
+>> cambiar de branch
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ git checkout make-branches
+Switched to branch 'make-branches'
+
+
+>> mostrar todos los branches
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (make-branches)
+$ git branch --all
+* make-branches
+  master
+  remotes/origin-github/master
+  remotes/origin/master
+
+
+>> alias para mostrar los log de manera decorate en una linea por commit
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ alias arbolito="git log --all --graph --oneline --decorate"
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ arbolito
+* 67d3bdd (HEAD -> master, origin/master, origin-github/master, make-branches, all) se organiza la informacion para mas claridad
+* 4c9d9ac finaliza las toma de notas para la creacion de TAGS
+* 0ff76b4 siempre nos aseguramos de hacer un git pull antes de hacer un push al remoto
+* 748459c se agrega el archivo de comando para establecer conexion ssh con github
+* 25d3380 (tag: v0.1) guardamos los ultimos cambios
+*   67fe391  conflictos eliminados
+|\
+| * b40718f cambios en el lado remoto para luego sincronizar con el local
+* | 4694862 guardamos los cambios para antes de realizar el pull del server remoto
+
+
+>> comando que muestra los branch con mas detalle
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (make-branches)
+$ git show-branch
+* [make-branches] inicia el archivo para documentar la creacion de branches
+ ! [master] se organiza la informacion para mas claridad
+--
+*  [make-branches] inicia el archivo para documentar la creacion de branches
+*+ [master] se organiza la informacion para mas claridad
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (make-branches)
+$ git show-branch --all
+* [make-branches] inicia el archivo para documentar la creacion de branches
+ ! [master] se organiza la informacion para mas claridad
+  ! [origin-github/make-branches] inicia el archivo para documentar la creacion de branches
+   ! [origin-github/master] se organiza la informacion para mas claridad
+    ! [origin/master] se organiza la informacion para mas claridad
+-----
+* +   [make-branches] inicia el archivo para documentar la creacion de branches
+*++++ [master] se organiza la informacion para mas claridad
+
+
+
+
+>> comando que muestra git de manera grafica.
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ gitk
+
+>> comando para borrar un branch
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ git branch -d nombre-del-branch
+Deleted branch nombre-del-branch (was 67d3bdd).
+
+
+>> subir el branch al repositorio github
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ git push origin-github make-branches
+
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'make-branches' on GitHub by visiting:
+remote:      https://github.com/ronesprograms/cursos-platzi/pull/new/make-branches
+remote:
+To github.com:ronesprograms/cursos-platzi.git
+ * [new branch]      make-branches -> make-branches
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ git checkout make-branches
+Switched to branch 'make-branches'
+
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (make-branches)
+$ git pull origin-github
+Warning: Permanently added the RSA host key for IP address '140.82.114.4' to the list of known hosts.
+You asked to pull from the remote 'origin-github', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (make-branches)
+$ git push origin-github make-branches
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 311 bytes | 311.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:ronesprograms/cursos-platzi.git
+   67d3bdd..24ea6bb  make-branches -> make-branches
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (make-branches)
+$
