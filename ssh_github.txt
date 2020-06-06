@@ -163,8 +163,61 @@ origin-github   git@github.com:ronesprograms/cursos-platzi.git (push)
 
 >> ahora para conectarnos 
     1. traemos la ultima version del servidor con git pull. or git fetch y git merge
-    git pull origin-github master
+    git pull origin-github
+    ó
+    ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+    $ git fetch origin-github
+    Warning: Permanently added the RSA host key for IP address '140.82.113.3' to the list of known hosts.
+    <<<<<<<<<< aqui se establece la conexion ssh  >>>>>>>>>>>>>
 
+    
+    ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+    $ git merge origin-github/master master
+    Already up to date.
+
+    ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+    $ git status
+    On branch master
+    Your branch is up to date with 'origin/master'.
+
+    Untracked files:
+    (use "git add <file>..." to include in what will be committed)
+            ssh_github.txt
+
+    nothing added to commit but untracked files present (use "git add" to track)
+
+    >> si hay diferencias lo revisamos con git diff
+    $ git diff  
+
+    ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+    $ git add .
+
+    ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+    $ git commit -m "se agrega el archivo de comando para establecer conexion ssh con github"
+    [master 748459c] se agrega el archivo de comando para establecer conexion ssh con github
+    1 file changed, 179 insertions(+)
+    create mode 100644 ssh_github.txt
+
+    >> antes de realizar el push hacemos un git pull para asegurarnos que no hubieron cambios en el remoto.
+    $ git pull
+    Already up to date.
+
+
+    >> hacemos el push al repositorio github luego de hacer el ultimo cambio en el master
+
+    ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+    $ git push origin-github master
+    Enumerating objects: 4, done.
+    Counting objects: 100% (4/4), done.
+    Delta compression using up to 8 threads
+    Compressing objects: 100% (3/3), done.
+    Writing objects: 100% (3/3), 2.70 KiB | 1.35 MiB/s, done.
+    Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+    To github.com:ronesprograms/cursos-platzi.git
+    25d3380..748459c  master -> master
+
+
+    
     2.
 
 
