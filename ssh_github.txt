@@ -1,0 +1,179 @@
+## proceso para conectarse con github via ssh
+1. creamos las claves ssh  de manera local
+    1.1 primero verificar el email con que esta creado la cuenta github.
+        en mi caso tiene:
+        en github profile / edit profile tengo el email: ronesprograms@gmail.com.
+    
+        en mi git local - que se mira con el comando:
+
+        git config -l
+
+        email: ronald.espizaram@gmail.com
+
+        -> ambos emails tienen que ser iguales.
+        para cambiar localmente la cuenta de email.
+        
+        git config --global user.email "ronesprograms@gmail.com"
+
+        >>>>>>>>>>>>>>>>>>>>>>>
+
+        
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ git config -l
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=true
+pull.rebase=false
+credential.helper=manager
+user.email=ronald.espinozaram@gmail.com <<<<<
+user.name=Ronald Espinoza
+gui.recentrepo=C:/Go/src/github.com/abourget/getting-started-with-golang
+gui.recentrepo=C:/go-proys/src/github.com/ronaldespinoza7560/go_proys
+gui.recentrepo=D:/workspace/chats_pex_process_offline
+core.editor="C:\Users\ASUS\AppData\Local\Programs\Microsoft VS Code\Code.exe" --wait
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.ignorecase=true
+remote.origin.url=C:\Users\ASUS\Google Drive (ronesprograms@gmail.com)\platzi-cursos\git-curso
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+remote.origin-github.url=https://github.com/ronesprograms/cursos-platzi.git
+remote.origin-github.fetch=+refs/heads/*:refs/remotes/origin-github/*
+
+
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ git config --global user.email "ronesprograms@gmail.com"
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ git config -l
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=true
+pull.rebase=false
+credential.helper=manager
+user.email=ronesprograms@gmail.com  <<<<<
+user.name=Ronald Espinoza
+user.emal=ronesprograms@gmail.com
+gui.recentrepo=C:/Go/src/github.com/abourget/getting-started-with-golang
+gui.recentrepo=C:/go-proys/src/github.com/ronaldespinoza7560/go_proys
+gui.recentrepo=D:/workspace/chats_pex_process_offline
+core.editor="C:\Users\ASUS\AppData\Local\Programs\Microsoft VS Code\Code.exe" --wait
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.ignorecase=true
+remote.origin.url=C:\Users\ASUS\Google Drive (ronesprograms@gmail.com)\platzi-cursos\git-curso
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+remote.origin-github.url=https://github.com/ronesprograms/cursos-platzi.git
+remote.origin-github.fetch=+refs/heads/*:refs/remotes/origin-github/*
+
+        <<<<<<<<<<<<<<<<<<<<<<<
+
+
+2. una vez que los correos sean iguales procedemos a crear la clave ssh, el correo que se pone en el comando 
+tiene que ser igual al correo del git local y el correo remoto.
+
+$ ssh-keygen -t rsa -b 4096 -C "ronesprograms@gmail.com"
+
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/ASUS/.ssh/id_rsa):
+/c/Users/ASUS/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/ASUS/.ssh/id_rsa
+Your public key has been saved in /c/Users/ASUS/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:wMly+AtDiFtNcNv3asrJ0JsjsYISWKiXgKD1m1D4U+w ronesprograms@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|  .oo.           |
+|..o=.*o.         |
+|=oo+*oB .        |
+|=oo.++Eo .       |
+|+o oo+. S .      |
+|+ o ++ . .       |
+| +  .oo o        |
+|o . o+.*         |
+|.  . .B.         |
++----[SHA256]-----+
+
+>> Chequeamos si el agente ssh esta funcionando en el sistema
+
+$ eval $(ssh-agent -s)
+Agent pid 
+
+>> ahora agregamos ssh_rsa en la maquina local.
+
+$ ssh-add ~/.ssh/id_rsa
+Identity added: /c/Users/ASUS/.ssh/id_rsa (ronesprograms@gmail.com)
+
+
+>> EN github agregamos  en settings/SSH & GPG  el id_rsa.pub
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCvsy3KbiZBn2ATGtlUCXv3z04VlkPB2Bq0n+PVzf0F96idmMnakEoDC1G5EWHjHsCwSTBTzfth585i7BVA7ZuDbNfPoCGdzXVuFvQk/Z+0WNb+ZoryrTXtKI1w7RyZMr09S9xwnTFDY8g79nlDtlmXhd3h8s0bujTcjFPVjjR9HB5tPgcPmS58u5WwxvGZf7AjNL4QS0DqxaaxwAv5sIbsfgJEXxVKuefpJ3gNtBILL2NO6uio1la2n8z/cHElpoxuaUp8WGZYZ9Vz7bvDmuuGCbWvApmCQhuCKNsShby5r7Sjsc3JaCFn8GI4RhQt3TtuskvekDORmkf1auO+L+82izWpbhZqcpemG87YcYeUgvBNmJQzbFQciBCDlBeQDfMAYVmah1oH06Besfln9HKZpwmxAgt7bKwSW1wQs59IFZiofsJrbgbp6HOdhkqIiJdzUruILlExQPAAoweKeTp0iuijUyjxk+33ZqFFSWnQo4ht3q9Fha2VJndLU+1MfUNI6Hpvb3z18689+uE/w3SIvEWKyP9kEMfqhScgx2k/HNKpn1w1e0Un/AgC+l6ByP0t0pJQbecocrf5MJBsU9lenFEYRrAeXP+ErpRRweS76ngTJR5UfcUwzaCIIQO62wTfWSK6TXkTUxQpjD5j5997GDuh3xH/iAAqvJmZIaLHcQ== ronesprograms@gmail.com
+
+>> ahora cambiamos la forma de conectarnos en git, para esto tenemos que cambiar
+la url de origin-github del proyecto git-curso.
+en
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+
+$ git remote -v
+origin  C:\Users\ASUS\Google Drive (ronesprograms@gmail.com)\platzi-cursos\git-curso (fetch)
+origin  C:\Users\ASUS\Google Drive (ronesprograms@gmail.com)\platzi-cursos\git-curso (push)
+origin-github   https://github.com/ronesprograms/cursos-platzi.git (fetch) <<<<<
+origin-github   https://github.com/ronesprograms/cursos-platzi.git (push)
+
+CAMBIAREMOS https://github.com/ronesprograms/cursos-platzi.git 
+POR la direccion ssh que se encuentra en el proyecto en github.
+git@github.com:ronesprograms/cursos-platzi.git
+
+>> el comando para este cambio es:
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+
+$ git remote set-url origin-github git@github.com:ronesprograms/cursos-platzi.git
+
+ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)
+$ git remote -v
+origin  C:\Users\ASUS\Google Drive (ronesprograms@gmail.com)\platzi-cursos\git-curso (fetch)
+origin  C:\Users\ASUS\Google Drive (ronesprograms@gmail.com)\platzi-cursos\git-curso (push)
+origin-github   git@github.com:ronesprograms/cursos-platzi.git (fetch)  <<<<<
+origin-github   git@github.com:ronesprograms/cursos-platzi.git (push)
+
+>> ahora para conectarnos 
+    1. traemos la ultima version del servidor con git pull. or git fetch y git merge
+    git pull origin-github master
+
+    2.
+
+
+    
+
+
+
+
+
+
+
+
