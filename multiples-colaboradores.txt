@@ -8,7 +8,7 @@ debe aceptar la invitacion.
 
 3. luego clonar el proyecto.
     hacer cambios al proyecto.
-        git commit -am "asdf"
+        git commit -am "asdfhij"
     
     hacer un push al servidor con los cambios realizados.
 
@@ -17,3 +17,11 @@ debe aceptar la invitacion.
 2. hacemos watch start y FORK.
 3. Luego de hacer el fork en nuestro terminal local clonamos el proyecto
 4. hacemos los cambios.
+
+y le hacemos push al servidor.
+en github hacemos un new pull request.
+
+el lider del proyecto en el servidor ronesprograms, revisa los 
+cambios planteado y si esta conforme envia una notificacion al 
+colaborador y 
+finalmente hace un merge.
