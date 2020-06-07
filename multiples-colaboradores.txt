@@ -12,5 +12,3 @@ debe aceptar la invitacion.
     
     hacer un push al servidor con los cambios realizados.
 
->> vamos a hacer correcciones.
-
