@@ -12,3 +12,8 @@ debe aceptar la invitacion.
     
     hacer un push al servidor con los cambios realizados.
 
+>> COLABORADORES REMOTOS
+1. buscamos el proyecto en github
+2. hacemos watch start y FORK.
+3. Luego de hacer el fork en nuestro terminal local clonamos el proyecto
+4. hacemos los cambios.
