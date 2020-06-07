@@ -1,4 +1,4 @@
-Agregar nuevos colaboradores al proyecto
+Agregar nuevos colaboradores al proyecto 
 1. en el proyecto original hay que ir al setting del repositorio.
 setting / Manage access
     invite a colaborator
@@ -11,4 +11,6 @@ debe aceptar la invitacion.
         git commit -am "asdf"
     
     hacer un push al servidor con los cambios realizados.
+
+>> vamos a hacer correcciones.
 
