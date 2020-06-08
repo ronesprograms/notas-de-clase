@@ -2,6 +2,10 @@
 $ git branch
 * master
 
+$ git branch -r muestra las ramas remotas
+
+$ git branch -a muestra todas las ramas locales y remotas
+
 
 >> construir branches
 ASUS@DESKTOP-LQC4BQI MINGW64 /d/workspace/platzi-cursos/git-curso (master)

@@ -97,3 +97,37 @@ git reflog: historial de todo el proyecto: hash/head
 git reset --hard hash/head/numerocommit: reseteamos hasta el hash o head indicado
 
 Nota: todo queda guardado en reflog
+
+
+<h2>git grep, git log</h2>
+git grep palabra: busca palabra en el repositorio
+git grep -n palabra: busca la palabra y muestra la linea
+git grep -c palabra: cuenta cuantas veces ocurrio en cada archivo.
+git log -S palabra: busca palabra en los commits
+
+
+<h2>git shortlog</h2>
+Comandos adicionales:
+
+git shortlog commits de cada mienbro del equipo
+git shortlog -sn numero de commits por miembro
+git shortlog -sn --all incluye los commits borrados
+git shortlog -sn --all --no-merges excluye los merges
+git blame archivo muestra quien modifico el archivo (por lineas)
+git blame archivo -c: indenta mejor la informacion
+git blame archivo -Li,f: muestra solo las lineas que estan entre i-f
+git branch -r ver ramas remotas
+git branch -a ver todas las ramas (remotos/locales)
+
+Utilidades gitHub:
+Panel insights
+pulse merge/pull request/ issues/historia de contribuciones
+contributors contribuidores del proyecto
+comunity readme, codigo de conducta, licencias, etc
+trafic: trafico del proyecto
+commits historia de commits
+code frecuency codigo añadido/borrado
+dependency graph uso de otras librerias
+alerts alertas de gitHub
+network historia de contribucion de los colaboradores
+forks muestra los forks del proyectos
