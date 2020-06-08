@@ -2,15 +2,15 @@
 
 
 <h2>33. Tu sitio web público con GitHub Pages</h2>
-gitHub pages
-pages.github.com: instrucciones para crear tu pagina en gitHub pages
--Crear un repositorio publico con tu nombre de usuario.github.io
--Crear un archivo index.html
--Modificar el source de repositorio > settings > GitHub Pages a master branch
+<pre>gitHub pages
+  pages.github.com: instrucciones para crear tu pagina en gitHub pages
+  -Crear un repositorio publico con tu nombre de usuario.github.io
+  -Crear un archivo index.html
+  -Modificar el source de repositorio > settings > GitHub Pages a master branch</pre>
 
 
 <h2>34 Rebase</h2>
-Es el proceso de mover o combinar una secuencia de confirmaciones en una nueva confirmación base. 
+<pre>Es el proceso de mover o combinar una secuencia de confirmaciones en una nueva confirmación base. 
 La reorganización es muy útil y se visualiza fácilmente en el contexto de un flujo de trabajo de ramas 
 de funciones. El proceso general se puede visualizar de la siguiente manera.
 Untitled.png
@@ -32,11 +32,12 @@ git rebase feature
 Nunca debes reorganizar las confirmaciones una vez que se hayan enviado a un repositorio público. 
 La reorganización sustituiría las confirmaciones antiguas por las nuevas y
 parecería que esa parte del historial de tu proyecto se hubiera desvanecido de repente.
-
+</pre>
 
 
 <h2>35 git stash</h2>
-guarda los cambios de manera temporal y regresa al commit anterior; desde alli puedes moverte entre ramas para recuperar informacion desde esta; tambien puede ser util para hacer experimentos rapidos.
+<pre>guarda los cambios de manera temporal y regresa al commit anterior; desde alli 
+puedes moverte entre ramas para recuperar informacion desde esta; tambien puede ser util para hacer experimentos rapidos.
 Comandos:
 git stash: crea el estash
 git stash list: lista de stash creados
@@ -44,18 +45,18 @@ git stash drop: elimina el stash
 git stash pop: abre el stash en la rama actual
 git stash branch nombre_rama: guarda el stash en nobre_rama
 Nota: recuerda regresar a la rama original antes de quitar el stash
-
+</pre>
 
 <h2>36 git clean</h2>
-git clean: quitar archivos no trackeados
+<pre>git clean: quitar archivos no trackeados
 git clean --dry-run: prueba en seco revisa los archicos antes de borrarlos
 git clean -f: borra los archivos que pasan por prueba en seco
 No borra: carpetas y archivos ignorados por .gitignore
-
+</pre>
 
 <h2>37 Cherry Pick</h2>
 
-cherry pick: trae un commit de otra ramma a la rama actual
+<pre>cherry pick: trae un commit de otra ramma a la rama actual
 sintaxis:
 
 git cherry-pick hash_commit
@@ -63,7 +64,9 @@ git cherry-pick hash_commit
 Nota:
 Es una mala practica: reconstruyes la historia
 
-Este comando permite coger uno o varios commits de otra rama sin tener que hacer un merge completo. Así, gracias a cherry-pick, podríamos aplicar los commits relacionados con nuestra funcionalidad de Facebook en nuestra rama master sin necesidad de hacer un merge.
+Este comando permite coger uno o varios commits de otra rama sin tener que hacer un merge completo. 
+Así, gracias a cherry-pick, podríamos aplicar los commits relacionados con nuestra funcionalidad
+ de Facebook en nuestra rama master sin necesidad de hacer un merge.
 
 Para demostrar cómo utilizar git cherry-pick, supongamos que tenemos un repositorio con el siguiente estado de rama:
 
@@ -73,7 +76,9 @@ a - b - c - d   Master
 El uso de git cherry-pick es sencillo y se puede ejecutar de la siguiente manera:
 
 git checkout master
-En este ejemplo, commitSha es una referencia de confirmación. Puedes encontrar una referencia de confirmación utilizando el comando git log. En este caso, imaginemos que queremos utilizar la confirmación ‘f’ en la rama master. Para ello, primero debemos asegurarnos de que estamos trabajando con esa rama master.
+En este ejemplo, commitSha es una referencia de confirmación. Puedes encontrar una referencia de 
+confirmación utilizando el comando git log. En este caso, imaginemos que queremos utilizar la confirmación ‘f’ 
+en la rama master. Para ello, primero debemos asegurarnos de que estamos trabajando con esa rama master.
 
 git cherry-pick f
 Una vez ejecutado, el historial de Git se verá así:
@@ -82,33 +87,33 @@ a - b - c - d - f   Master
          \
            e - f - g Feature
 La confirmación f se ha sido introducido con éxito en la rama de funcionalidad
-
+</pre>
 
 <h2>git amend</h2>
-git amend: modifica un commit en caso de error
+<pre>git amend: modifica un commit en caso de error
 sintaxis:
 git add archivo_cambiado: es importante cuando haces amend
 git commit --amend: pega los cambios hechos al commit anterior
-
+</pre>
 
 <h2>git reset </h2>
-git reflog: historial de todo el proyecto: hash/head
+<pre>git reflog: historial de todo el proyecto: hash/head
 
 git reset --hard hash/head/numerocommit: reseteamos hasta el hash o head indicado
 
 Nota: todo queda guardado en reflog
-
+</pre>
 
 <h2>git grep, git log</h2>
-git grep palabra: busca palabra en el repositorio
+<pre>git grep palabra: busca palabra en el repositorio
 git grep -n palabra: busca la palabra y muestra la linea
 git grep -c palabra: cuenta cuantas veces ocurrio en cada archivo.
 git log -S palabra: busca palabra en los commits
-
+</pre>
 
 <h2>git shortlog</h2>
-Comandos adicionales:
 
+<pre>Comandos adicionales:
 git shortlog commits de cada mienbro del equipo
 git shortlog -sn numero de commits por miembro
 git shortlog -sn --all incluye los commits borrados
@@ -131,3 +136,4 @@ dependency graph uso de otras librerias
 alerts alertas de gitHub
 network historia de contribucion de los colaboradores
 forks muestra los forks del proyectos
+</pre>
